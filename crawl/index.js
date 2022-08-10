@@ -8,7 +8,7 @@ function sleep(ms) {
 }
 
 //file chứa ds link
-const dslink = "listLink.txt";
+const dslink = "listLinkChinhTriThoiSu.txt";
 
 //lưu danh sách link thành mảng
 var arrayLink = fs.readFileSync(dslink).toString().split("\n");
@@ -41,12 +41,16 @@ async function crawler() {
         let data = [];
         // Tên của chương đó.
         let chapterTitle = tableContent.find("h1").text().trim();
+        const contentTextBold = $(".newFeature__main-textBold");
+        let textBold = contentTextBold.text().trim();
+        const contentMain = $(".maincontent");
+        let mainContent = contentMain.find("p").text().trim();
 
 
         //Tìm hình ảnh trong bài viết
         let namefile = "";
-        let chapterData = []
-        const chapterLink = tableContent.find("h1").find("img");
+        let chapterData = [];
+        const chapterLink = contentMain.find("figure").find("img");
 
         for (let j = 0; j < chapterLink.length; j++) {
             const post = $(chapterLink[j]);
@@ -60,16 +64,41 @@ async function crawler() {
             download(postLink, filename, function () {
                 //console.log("Link:"+linkchay);
             });
-            const postTitle = post.text().trim();
+            const postTitle = contentMain.find("figcaption").text().trim();
             chapterData.push({
                 postTitle,
                 linkchay,
                 filename,
             });
         }
+        let namefile2 = "";
+        let chapterData2 = [];
+        const chapterLink2 = contentMain.find("td").find("img");
+
+        for (let j = 0; j < chapterLink2.length; j++) {
+            const post2 = $(chapterLink2[j]);
+            const postLink2 = post2.attr("src");
+            //lấy vị trí thứ tự để chúng ta biết mà cắt lấy name của hình ảnh
+            const n2 = postLink2.lastIndexOf("/");
+            //lấy name hình ảnh
+            const filename2 = postLink2.substring(n2 + 1, postLink2.length);
+            namefile2 = filename2;
+            //tiến hành chèn url hình và name hình vào hàm download
+            download(postLink2, filename2, function () {
+                //console.log("Link:"+linkchay);
+            });
+
+            chapterData2.push({
+                linkchay,
+                filename2,
+            });
+        }
         data.push({
             chapterTitle,
+            textBold,
+            mainContent,
             chapterData,
+            chapterData2,
 
         });
 
