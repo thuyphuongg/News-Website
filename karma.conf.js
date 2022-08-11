@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/mdb5-angular-ui-kit-pro-advanced'),
+      dir: require('path').join(__dirname, './coverage/web-news'),
       subdir: '.',
       reporters: [
         { type: 'html' },
