@@ -10,6 +10,7 @@ const routes: Routes = [
     {path:'about', component:AboutComponent},
     {path:'contact', component:ContactComponent}];
 @NgModule({
+    declarations: [HomeComponent, AboutComponent,ContactComponent],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
