@@ -1,3 +1,4 @@
+
 * {
     margin: 0; padding: 0;
 }
@@ -41,7 +42,7 @@ img {
 /** BEGIN wrapper **/
 #wrapper {
     width: 970px;
-    background:  repeat-y 0 0;
+    background: url(#) repeat-y 0 0;
     margin: auto auto;
     text-align: left;
     padding: 0 7px;
@@ -82,7 +83,7 @@ img {
     float: left;
 }
 #header .logo h1 {
-    /*font-family: "Lucida Sans";*/
+    font-family: "Lucida Sans";
     font-size: 2.5em;
     text-transform: uppercase;
 }
@@ -130,7 +131,7 @@ img {
     padding: 20px 15px 0 35px;
 }
 #content .post h2 {
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     font-size: 1.5em;
     margin-bottom: 15px;
 }
@@ -139,7 +140,7 @@ img {
 }
 #content .post .date {
     font-size: 0.9em;
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     color: #808080;
     margin-bottom: 15px;
 }
@@ -149,7 +150,7 @@ img {
     padding: 5px 10px;
     display: block;
     float: left;
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     font-weight: bold;
     margin-bottom: 25px;
 }
@@ -183,7 +184,7 @@ img {
 #content .postnav ul li {
     float: left;
     padding: 2px;
-
+    padding: 2px;
 }
 #content .postnav ul li a {
     display: block;
@@ -193,7 +194,7 @@ img {
     padding: 5px 8px;
     background-color: #9F9F9F;
     color: #ffffff;
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     font-weight: bold;
 }
 #content .postnav ul li a:hover {
@@ -211,7 +212,7 @@ img {
     padding: 5px 8px;
     background-color: #9F9F9F;
     color: #ffffff;
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     font-weight: bold;
     margin: 2px;
 }
@@ -265,7 +266,7 @@ img {
     float: left;
     border: 0;
     font-size: 1.2em;
-    /*font-family: Verdana;*/
+    font-family: Verdana;
     width: 200px;
     margin: 18px 11px 0 22px;
 }
@@ -314,7 +315,7 @@ img {
     clear: both;
     background-color: #252525;
     color: #ffffff;
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     padding: 30px;
 }
 #footer p {
@@ -344,7 +345,7 @@ img {
 #comments form input, textarea {
     border: 1px solid #cccccc;
     font-size: 0.9em;
-    /*font-family: Verdana;*/
+    font-family: Verdana;
     padding: 4px;
     background-position: 4px 4px;
     background-repeat: no-repeat;
@@ -362,7 +363,7 @@ img {
     border: 1px solid #909090;
     background-color: #cccccc;
     font-size: 0.9em;
-    /*font-family: Verdana;*/
+    font-family: Verdana;
     width: 120px; height: 23px;
 }
 .commentdetails {
@@ -390,13 +391,13 @@ h2.title {
     padding: 20px 35px;
 }
 .single h2 {
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     font-size: 1.5em;
     margin-bottom: 15px;
 }
 .single .date {
     font-size: 0.9em;
-    /*font-family: Georgia;*/
+    font-family: Georgia;
     color: #808080;
     margin-bottom: 15px;
 }
@@ -480,3 +481,4 @@ h2.title {
     text-decoration: none;
 }
 /** END wordpress 2.7 comments **/
+/*# sourceMappingURL=home.component.css.map */
