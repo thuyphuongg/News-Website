@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'untitled3';
+  constructor(
+      public routerService : Router
+  ) {}
+
+  navigate(url : string) {
+    // this.routerService.navigate([url]);
+    this.routerService.navigateByUrl(url);
+  }
 }
