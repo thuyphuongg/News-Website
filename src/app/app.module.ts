@@ -9,11 +9,12 @@ import {LoginUserComponent} from "./user/login-user/login-user.component";
 import { RegisterUserComponent } from './user/register-user/register-user.component';
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { InvoiceComponent } from './user/invoice/invoice.component';
 
 @NgModule({
   declarations: [
 <<<<<<< Updated upstream
-    AppComponent, DetailPageComponent, HomeComponent, LoginUserComponent, RegisterUserComponent
+    AppComponent, DetailPageComponent, HomeComponent, LoginUserComponent, RegisterUserComponent, InvoiceComponent
 
 
 
