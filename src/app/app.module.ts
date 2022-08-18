@@ -8,6 +8,8 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { ContentComponent } from './content/content.component';
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./component/home/home.component";
+import { SearchComponent } from './search/search.component';
+
 
 // import {DetailPageComponent} from "./user/detail-page/detail-page.component";
 // import {HomeComponent} from "./user/home/home.component";
@@ -28,6 +30,7 @@ const routes: Routes = [
     FooterComponent,
     SlideBarComponent,
     ContentComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
