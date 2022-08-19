@@ -35,8 +35,15 @@ async function crawler() {
         /* Lấy tên bài viết*/
         // const title = $("newsFeature__header").text().trim();
         //const description = $(".entry-content > p").text().trim();
-        const category = $('.breadcrumb-box__link')
-        let categoryName = category.find("a").text().trim();
+        const category = $('.breadcrumb-box__link ')
+        let nameCategory = category.find("a");
+        let categoryName =[];
+        for (let k = 0; k < nameCategory.length; k++) {
+            const post = $(nameCategory[k]);
+            categoryName.push(nameCategory.text().trim());
+            const n = categoryName.lastIndexOf("/");
+            // postLink=postLink.substring(n+1,postLink.length)}
+            categoryName.concat(categoryName)}
 
         const date = $('.breadcrumb-box__time')
         let dateTime = date.find("span").text().trim();
@@ -58,11 +65,16 @@ async function crawler() {
         // let authorData = [];
         const authorInfo = $(".newsFeature__author-info");
         let authorname = authorInfo.find("a").text().trim();
-        // const chapterLink = contentMain.find("figure").find("img");
+        const chapterLink = contentMain.find("figure").find("img");
         //
-        // for (let j = 0; j < chapterLink.length; j++) {
-        //     const post = $(chapterLink[j]);
-        //     const postLink = post.attr("src");
+        let postLink =[];
+        for (let j = 0; j < chapterLink.length; j++) {
+            const post = $(chapterLink[j]);
+            postLink.push(post.attr("src"));
+            const n = postLink.lastIndexOf("/");
+            // postLink=postLink.substring(n+1,postLink.length)}
+            postLink.concat(postLink)}
+
         //     //lấy vị trí thứ tự để chúng ta biết mà cắt lấy name của hình ảnh
         //     const n = postLink.lastIndexOf("/");
         //     //lấy name hình ảnh
@@ -81,6 +93,7 @@ async function crawler() {
             chapterTitle,
             textBold,
             mainContent,
+            postLink,
             ImageAuthor,
             authorname,
         });
@@ -94,7 +107,7 @@ async function crawler() {
 }
 
 //call crawler
-    crawler();
+crawler();
 //call download file
 // var download = function (uri, filename, callback) {
 //     request.head(uri, function (err, res, body) {
