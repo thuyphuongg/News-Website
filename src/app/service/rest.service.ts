@@ -8,7 +8,7 @@ import {HttpClient} from "@angular/common/http";
 export class RestService {
 
   constructor(private _http: HttpClient) {}
-  url: string="http://3000/News";
+  url: string="http://localhost:3000/News";
   getNews(){
     return this._http.get<New[]>(this.url);
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NewsapiservicesService} from "../service/newsapiservices.service";
+// import {NewsapiservicesService} from "../service/newsapiservices.service";
 import {New} from "../Class/new";
 import {RestService} from "../service/rest.service";
 
@@ -25,6 +25,7 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.rs.getNews().subscribe((reponse)=>{
       this.news = reponse;
+      console.log(this.news);
     })
   }
 

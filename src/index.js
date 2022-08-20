@@ -40,7 +40,7 @@ async function crawler() {
         let categoryName =[];
         for (let k = 0; k < nameCategory.length; k++) {
             const post = $(nameCategory[k]);
-            categoryName.push(nameCategory.text().trim());
+            categoryName.push(post.text().trim());
             const n = categoryName.lastIndexOf("/");
             // postLink=postLink.substring(n+1,postLink.length)}
             categoryName.concat(categoryName)}
