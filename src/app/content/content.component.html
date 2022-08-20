@@ -1,20 +1,22 @@
 <!-- BEGIN content -->
-<div id="content">
+<div   id="content" style="">
 
     <!-- begin post -->
-    <div class="post" *ngFor="let d of contentDisplay">
+<!--    *ngFor="let post of news"-->
+    <div *ngFor="let post of news" style="display: inline-block">
+    <div  class="post" style="height:auto;">
         <div class="thumb">
-            <a href="#">
-                <img src="{{d.urlToImage}}" alt="" />
+            <a href="#" >
+                <img src="{{post.postLink[0]}}" alt=""style="height: 100%"/>
             </a>
         </div>
-        <h2>
-            <a href="#">{{d.title}}
-            </a>
+        <h2 style=" font-family: inherit">
+            <a href="#">{{post.chapterTitle}}</a>
         </h2>
-        <p class="date">{{d.publishedAt}}</p>
-        <p>{{d.content}}</p>
-        <a class="continue" href="{{d.url}}">Continue Reading</a> </div>
+        <p class="date">{{post.dateTime}}</p>
+        <p>{{post.textBold}}</p>
+        <a class="continue" href="">Continue Reading</a> </div>
+    </div>
     <!-- end post -->
     <!-- begin post navigation -->
     <div class="postnav">

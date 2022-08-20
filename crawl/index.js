@@ -8,11 +8,11 @@ function sleep(ms) {
 }
 
 //file chứa ds link
-const dslink = "listLinkChinhTriThoiSu.txt";
+const dslink = "listLink.txt";
 
 //lưu danh sách link thành mảng
 var arrayLink = fs.readFileSync(dslink).toString().split("\n");
-
+let data = [];
 async function crawler() {
     await sleep(1000);
     for (i in arrayLink) {
@@ -35,10 +35,23 @@ async function crawler() {
         /* Lấy tên bài viết*/
         // const title = $("newsFeature__header").text().trim();
         //const description = $(".entry-content > p").text().trim();
+        const category = $('.breadcrumb-box__link ')
+        let nameCategory = category.find("a");
+        let categoryName =[];
+        for (let k = 0; k < nameCategory.length; k++) {
+            const post = $(nameCategory[k]);
+            categoryName.push(post.text().trim());
+            const n = categoryName.lastIndexOf("/");
+            // postLink=postLink.substring(n+1,postLink.length)}
+            categoryName.concat(categoryName)}
 
+        const date = $('.breadcrumb-box__time')
+        let dateTime = date.find("span").text().trim();
+        const authorImage = $('.newsFeature__author-boxImage')
+        let ImageAuthor = authorImage.find("a").attr("data-background-image");
         //kiếm class hoặc id cha chứa nội dung website
         const tableContent = $(".newsFeature__header");
-        let data = [];
+
         // Tên của chương đó.
         let chapterTitle = tableContent.find("h1").text().trim();
         const contentTextBold = $(".newFeature__main-textBold");
@@ -48,79 +61,59 @@ async function crawler() {
 
 
         //Tìm hình ảnh trong bài viết
-        let namefile = "";
-        let chapterData = [];
+        // let namefile = "";
+        // let authorData = [];
+        const authorInfo = $(".newsFeature__author-info");
+        let authorname = authorInfo.find("a").text().trim();
         const chapterLink = contentMain.find("figure").find("img");
-
+        //
+        let postLink =[];
         for (let j = 0; j < chapterLink.length; j++) {
             const post = $(chapterLink[j]);
-            const postLink = post.attr("src");
-            //lấy vị trí thứ tự để chúng ta biết mà cắt lấy name của hình ảnh
+            postLink.push(post.attr("src"));
             const n = postLink.lastIndexOf("/");
-            //lấy name hình ảnh
-            const filename = postLink.substring(n + 1, postLink.length);
-            namefile = filename;
-            //tiến hành chèn url hình và name hình vào hàm download
-            download(postLink, filename, function () {
-                //console.log("Link:"+linkchay);
-            });
-            const postTitle = contentMain.find("figcaption").text().trim();
-            chapterData.push({
-                postTitle,
-                linkchay,
-                filename,
-            });
-        }
-        let namefile2 = "";
-        let chapterData2 = [];
-        const chapterLink2 = contentMain.find("td").find("img");
+            // postLink=postLink.substring(n+1,postLink.length)}
+            postLink.concat(postLink)}
 
-        for (let j = 0; j < chapterLink2.length; j++) {
-            const post2 = $(chapterLink2[j]);
-            const postLink2 = post2.attr("src");
-            //lấy vị trí thứ tự để chúng ta biết mà cắt lấy name của hình ảnh
-            const n2 = postLink2.lastIndexOf("/");
-            //lấy name hình ảnh
-            const filename2 = postLink2.substring(n2 + 1, postLink2.length);
-            namefile2 = filename2;
-            //tiến hành chèn url hình và name hình vào hàm download
-            download(postLink2, filename2, function () {
-                //console.log("Link:"+linkchay);
-            });
+        //     //lấy vị trí thứ tự để chúng ta biết mà cắt lấy name của hình ảnh
+        //     const n = postLink.lastIndexOf("/");
+        //     //lấy name hình ảnh
+        //     const filename = postLink.substring(n + 1, postLink.length);
+        //     namefile = filename;
+        //     //tiến hành chèn url hình và name hình vào hàm download
+        //     download(postLink, filename, function () {
+        //         //console.log("Link:"+linkchay);
+        //     });
+        //     const postTitle = contentMain.find("figcaption").text().trim();
 
-            chapterData2.push({
-                linkchay,
-                filename2,
-            });
-        }
+
         data.push({
+            categoryName,
+            dateTime,
             chapterTitle,
             textBold,
             mainContent,
-            chapterData,
-            chapterData2,
-
+            postLink,
+            ImageAuthor,
+            authorname,
         });
-
-
+        data.concat(data);
         // Lưu dữ liệu về máy
         fs.writeFileSync('data.json', JSON.stringify(data))
         console.log(linkchay + "------------->done");
-
         await sleep(1000);
     }
 
+}
 
-};
 //call crawler
 crawler();
-
 //call download file
-var download = function (uri, filename, callback) {
-    request.head(uri, function (err, res, body) {
-        console.log('content-type:', res.headers['content-type']);
-        console.log('content-length:', res.headers['content-length']);
-
-        request(uri).pipe(fs.createWriteStream('./images/' + filename)).on('close', callback);
-    });
-};
+// var download = function (uri, filename, callback) {
+//     request.head(uri, function (err, res, body) {
+//         console.log('content-type:', res.headers['content-type']);
+//         console.log('content-length:', res.headers['content-length']);
+//
+//         request(uri).pipe(fs.createWriteStream('./images/' + filename)).on('close', callback);
+//     });
+// };

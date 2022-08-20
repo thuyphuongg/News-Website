@@ -127,7 +127,8 @@ img {
     float: left;
 }
 #content .post {
-    width: 259px; height: 420px;
+    width: 259px;
+    height: 420px;
     float: left;
     padding: 20px 15px 0 35px;
 }
@@ -160,7 +161,7 @@ img {
     line-height: 1.4em;
 }
 #content .post .thumb {
-    height: 92px;
+    height: 200px;
     overflow: hidden;
     padding: 5px;
     background-color: #EEEEEE;
@@ -170,9 +171,11 @@ img {
 #content .post .thumb div {
     height: 92px;
     overflow: hidden;
+    text-align: justify-all;
 }
 #content .post .thumb img {
-    width: 247px;
+    width: 300px;
+
 }
 #content .postnav {
     clear: both;
