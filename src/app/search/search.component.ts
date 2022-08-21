@@ -11,13 +11,9 @@ import {Router} from "@angular/router";
 
 export class SearchComponent implements OnInit {
   keyWord='';
-  news: New[] = [];
   constructor(private router: Router) {
-
   }
   ngOnInit(): void {}
-  //
-
   btnClick() {
     this.router.navigateByUrl('/searchPage');
   }

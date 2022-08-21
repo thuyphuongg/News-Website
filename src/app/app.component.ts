@@ -11,11 +11,7 @@ import {RestService} from "./service/rest.service";
 export class AppComponent {
     title = 'untitled3';
     news: New[] = [];
-    keyWord: any;
-
-    constructor(public rs: RestService) {
-    }
-
+    constructor(public rs: RestService) {}
     ngOnInit(): void {
         this.rs.getNews().subscribe((reponse) => {
             this.news = reponse;

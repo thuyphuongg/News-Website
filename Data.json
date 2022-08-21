@@ -16,6 +16,35 @@
   "profile": {
     "name": "typicode"
   },
+  "Users": [{
+    "id": "",
+    "firtsname": "Virat",
+    "lastname": "Khoks",
+    "email": "dskfj",
+    "mobile":"8374937",
+    "salary": "8348387"
+  },{
+    "id": "1",
+    "firtsname": "Virat",
+    "lastname": "Khoks",
+    "email": "dskfj",
+    "mobile":"8374937",
+    "salary": "8348387"
+  },{
+    "id": "",
+    "firtsname": "Virat",
+    "lastname": "Khoks",
+    "email": "dskfj",
+    "mobile":"8374937",
+    "salary": "8348387"
+  },{
+    "id": "",
+    "firtsname": "Virat",
+    "lastname": "Khoks",
+    "email": "dskfj",
+    "mobile":"8374937",
+    "salary": "8348387"
+  }],
   "News": [{"categoryName":["Thời sự","Chính trị"],
             "dateTime":"19/08/2022   16:26 (GMT+07:00)",
             "chapterTitle":"Đức tạm công nhận hộ chiếu mẫu mới của Việt Nam nhưng chưa cấp visa định cư",

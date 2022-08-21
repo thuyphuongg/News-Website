@@ -34,6 +34,7 @@ const routes: Routes = [
     SlideBarComponent,
     ContentComponent,
     SearchComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,

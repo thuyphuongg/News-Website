@@ -1,9 +1,9 @@
 <!-- begin search -->
-<form class="search" action="#" style="float: right">
-    <input class = "form-control" type="text" (click)="btnClick()" [(ngModel)]="keyWord"
-           placeholder="Tìm Kiếm">
-    <button type="submit">Search</button>
-
+<form class="search" action="#" style="float: right; width: 80%">
+    <input class = "form-control" type="text"
+           placeholder="Tìm Kiếm" [(ngModel)]="keyWord">
+    <button type="submit" (click)="btnClick()">Search</button>
 </form>
+
 <!-- end search -->
 
