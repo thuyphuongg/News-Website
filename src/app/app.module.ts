@@ -16,8 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import {SearchPageComponent} from "./search-page/search-page.component";
-
-
+// import {NewsapiservicesService} from "./service/newsapiservices.service";
 const routes: Routes = [
   {path:'home', component:ContentComponent},
   {path:'', redirectTo:'home',pathMatch:'full' },

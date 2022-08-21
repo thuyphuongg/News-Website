@@ -11,9 +11,7 @@ describe('RegisterUserComponent', () => {
       declarations: [ RegisterUserComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(RegisterUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
