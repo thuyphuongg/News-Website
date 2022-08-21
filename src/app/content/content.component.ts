@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-// import {NewsapiservicesService} from "../service/newsapiservices.service";
-import {New} from "../Class/new";
+import {Component, Input, OnInit} from '@angular/core';
 import {RestService} from "../service/rest.service";
 
 @Component({
@@ -19,7 +17,7 @@ export class ContentComponent implements OnInit {
   //   })
   // }
 //Phần này để chạy data crawl được
-  news: New[] = [];
+  @Input() news;
   keyWord: any;
   constructor(public rs: RestService) {
   }

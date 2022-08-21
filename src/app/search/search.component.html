@@ -1,7 +1,7 @@
 <!-- begin search -->
-<form class="search" action="#" style="float: right">
-    <input class = "form-control" type="text" name="keyWord" [(ngModel)]="keyWord" (ngModelChange)="Search()"
-           placeholder="Tìm Kiếm">
-    <button type="submit" routerlink="resultSearch" >Search</button>
+<form class="search" action="#" style="float: right" routerlink ="searchPage">
+    <input class = "form-control" type="text" placeholder="Tìm Kiếm">
+    <a >
+    <button type="submit"  >Search</button></a>
 </form>
 <!-- end search -->

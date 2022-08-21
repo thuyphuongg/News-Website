@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {New} from "../Class/new";
 import {RestService} from "../service/rest.service";
 
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
+
 export class SearchComponent implements OnInit {
   keyWord: any;
   news: New[] = [];
