@@ -13,11 +13,9 @@ import {Ng2OrderModule} from "ng2-order-pipe";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {NgxPaginationModule} from "ngx-pagination";
 import {FormsModule} from "@angular/forms";
-import { SearchPageComponent } from './search/search-page/search-page.component';
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
-import { SearchBarComponent } from './slide-bar/search-bar/search-bar.component';
-import { SearchRoutingComponent } from './search/search-routing/search-routing.component';
+import {SearchPageComponent} from "./search-page/search-page.component";
 
 
 const routes: Routes = [
@@ -36,9 +34,6 @@ const routes: Routes = [
     SlideBarComponent,
     ContentComponent,
     SearchComponent,
-    SearchPageComponent,
-    SearchBarComponent,
-    SearchRoutingComponent,
   ],
   imports: [
     BrowserModule,
