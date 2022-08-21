@@ -1,0 +1,32 @@
+<h1 style="text-align: center">Kết Quả Tìm Kiếm</h1>
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <div class="search-form" style="text-align: center">
+                        <form action="#" method="get">
+                                <input style="width:80%" type="text" placeholder="Tìm kiếm"
+                                       [(ngModel)]="keyWords" [ngModelOptions]="{standalone: true}" (ngModelChange)="Search()" >
+                                <button class="btn btn-lg btn-primary" type="submit">
+                                    Search
+                                </button>
+                        </form>
+                    </div>
+
+
+
+                    <div class="hr-line-dashed"></div>
+                    <div class="search-result" style="display: flex" *ngFor="let new of data ">
+                        <img src="{{new.postLink}}" style="width: 100px; height: 70px; float: left">
+                        <div style="padding-left: 30px;">
+                        <h3><a href="#" style="text-decoration: none">{{new.chapterTitle}}</a></h3>
+                        <a href="#" class="search-link"  style="text-decoration: none">{{new.dateTime}}</a>
+                        <p> {{new.textBold}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
