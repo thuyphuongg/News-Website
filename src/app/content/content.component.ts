@@ -19,26 +19,28 @@ export class ContentComponent implements OnInit {
 //Phần này để chạy data crawl được
   @Input() news;
   keyWord: any;
+  p: number = 1;
+
   constructor(public rs: RestService) {
   }
+
   ngOnInit(): void {
-    this.rs.getNews().subscribe((reponse)=>{
+    this.rs.getNews().subscribe((reponse) => {
       this.news = reponse;
       console.log(this.news);
     })
   }
-  Search() {
 
+  Search() {
     if (this.keyWord == "") {
       this.ngOnInit();
     } else {
       this.news = this.news.filter(res =>
-              Object.keys(res).some(k=>res[k] != null &&
-                  res[k].toString().toLowerCase().includes(this.keyWord.toLowerCase()))
-          // restoLocaleLowerCase().match(this.keyWord.toLocaleLowerCase());
+          Object.keys(res).some(k => res[k] != null &&
+            res[k].toString().toLowerCase().includes(this.keyWord.toLowerCase()))
+        // restoLocaleLowerCase().match(this.keyWord.toLocaleLowerCase());
 
       );
     }
   }
-
 }
