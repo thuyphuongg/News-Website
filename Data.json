@@ -17,28 +17,28 @@
     "name": "typicode"
   },
   "Users": [{
-    "id": "",
-    "firtsname": "Virat",
-    "lastname": "Khoks",
-    "email": "dskfj",
-    "mobile":"8374937",
-    "salary": "8348387"
-  },{
     "id": "1",
+    "firtsname": "Hong",
+    "lastname": "Khong",
+    "email": "191111@mm.com",
+    "mobile":"0123",
+    "salary": "10000"
+  },{
+    "id": "2",
+    "firtsname": "Ha",
+    "lastname": "Kho",
+    "email": "dskfj",
+    "mobile":"8374937",
+    "salary": "8348387"
+  },{
+    "id": "3",
     "firtsname": "Virat",
     "lastname": "Khoks",
     "email": "dskfj",
     "mobile":"8374937",
     "salary": "8348387"
   },{
-    "id": "",
-    "firtsname": "Virat",
-    "lastname": "Khoks",
-    "email": "dskfj",
-    "mobile":"8374937",
-    "salary": "8348387"
-  },{
-    "id": "",
+    "id": "4",
     "firtsname": "Virat",
     "lastname": "Khoks",
     "email": "dskfj",
