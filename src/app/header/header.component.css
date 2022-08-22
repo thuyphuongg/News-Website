@@ -93,7 +93,8 @@ img {
   background-color: #252525;
 }
 #header ol li {
-  float: left
+  float: left;
+  width: 11%;
 }
 #header ol li a {
   color: #ffffff;

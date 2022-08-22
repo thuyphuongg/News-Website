@@ -6,7 +6,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { ContentComponent } from './content/content.component';
-import {RouterModule, Routes} from "@angular/router";
 import { SearchComponent } from './search/search.component';
 import {RestService} from "./service/rest.service";
 import {Ng2OrderModule} from "ng2-order-pipe";
@@ -16,15 +15,9 @@ import {FormsModule} from "@angular/forms";
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import {SearchPageComponent} from "./search-page/search-page.component";
+import {AppRoutingModule} from "./app-routing.module";
 // import {NewsapiservicesService} from "./service/newsapiservices.service";
-const routes: Routes = [
-  {path:'home', component:ContentComponent},
-  {path:'', redirectTo:'home',pathMatch:'full' },
-  {path:'about', component:AboutComponent},
-  {path:'contact', component:ContactComponent},
-  {path:'searchPage',component: SearchPageComponent},
 
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,11 +31,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
     Ng2OrderModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [RestService],
   exports: [
