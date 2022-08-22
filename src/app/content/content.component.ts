@@ -20,7 +20,6 @@ export class ContentComponent implements OnInit {
   @Input() news;
   keyWord: any;
   p: number = 1;
-
   constructor(public rs: RestService) {
   }
 
