@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {AboutComponent} from "./about/about.component";
 import {ContactComponent} from "./contact/contact.component";
 import {SearchPageComponent} from "./search-page/search-page.component";
+import { DetailPageComponent } from './detail-page/detail-page.component';
 // import {NewsapiservicesService} from "./service/newsapiservices.service";
 const routes: Routes = [
   {path:'home', component:ContentComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'about', component:AboutComponent},
   {path:'contact', component:ContactComponent},
   {path:'searchPage',component: SearchPageComponent},
+  {path:'news/:newTitle', component:DetailPageComponent},
 
 ];
 @NgModule({
@@ -34,6 +36,7 @@ const routes: Routes = [
     ContentComponent,
     SearchComponent,
     SearchPageComponent,
+    DetailPageComponent,
   ],
   imports: [
     BrowserModule,

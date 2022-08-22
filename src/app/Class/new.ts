@@ -1,14 +1,21 @@
-
-
 export class New {
+    private _newId: number;
     private _categoryName: Array<String>;
     private _dateTime: String;
     private _chapterTitle: String;
     private _textBold: String;
     private _mainContent: String;
-    private _postLink:Array<String>;
+    private _postLink: Array<String>;
     private _ImageAuthor: String;
     private _authorname: String;
+
+    get newId(): number {
+        return this._newId;
+    }
+
+    set newId(value: number) {
+        this._newId = value;
+    }
 
     get categoryName(): Array<String> {
         return this._categoryName;
