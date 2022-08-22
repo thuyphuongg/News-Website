@@ -12,10 +12,15 @@ import {Ng2OrderModule} from "ng2-order-pipe";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {NgxPaginationModule} from "ngx-pagination";
 import {FormsModule} from "@angular/forms";
-import {AboutComponent} from "./about/about.component";
-import {ContactComponent} from "./contact/contact.component";
+import {environment} from "../environments/environment";
 import {SearchPageComponent} from "./search-page/search-page.component";
 import {AppRoutingModule} from "./app-routing.module";
+import {VarifyEmailComponent} from "./component/varify-email/varify-email.component";
+import {LoginComponent} from "./component/login/login.component";
+import {RegisterComponent} from "./component/register/register.component";
+import {ForgotPasswordComponent} from "./component/forgot-password/forgot-password.component";
+import {DashboardComponent} from "./component/dashboard/dashboard.component";
+import {AngularFireModule} from "@angular/fire/compat";
 // import {NewsapiservicesService} from "./service/newsapiservices.service";
 
 @NgModule({
@@ -27,6 +32,11 @@ import {AppRoutingModule} from "./app-routing.module";
     ContentComponent,
     SearchComponent,
     SearchPageComponent,
+    VarifyEmailComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +46,8 @@ import {AppRoutingModule} from "./app-routing.module";
     NgxPaginationModule,
     FormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
   ],
   providers: [RestService],
   exports: [
