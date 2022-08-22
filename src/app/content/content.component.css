@@ -51,11 +51,12 @@ img {
 
 /** BEGIN wrapper **/
 #wrapper {
-  width: 970px;
-  background: url(#) repeat-y 0 0;
-  margin: auto auto;
-  text-align: left;
-  padding: 0 7px;
+    width: 1250px;
+    background: url(#) repeat-y 0 0;
+    margin: auto auto;
+    text-align: left;
+    padding: 0 7px;
+
 }
 
 /** END wrapper **/

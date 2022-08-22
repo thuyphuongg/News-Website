@@ -8,7 +8,7 @@ import {LoginComponent} from "./component/login/login.component";
 import {RegisterComponent} from "./component/register/register.component";
 import {DashboardComponent} from "./component/dashboard/dashboard.component";
 import {ForgotPasswordComponent} from "./component/forgot-password/forgot-password.component";
-
+import {DetailPageComponent} from "./detail-page/detail-page.component";
 const routes: Routes = [
   {path: '', redirectTo: '/first-component', pathMatch: 'full'},
   {path: 'content', component: ContentComponent},
@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'forgot-password', component: ForgotPasswordComponent},
+ {path:'detail', component:DetailPageComponent},
 
 ];
 

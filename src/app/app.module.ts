@@ -14,6 +14,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {FormsModule} from "@angular/forms";
 import {environment} from "../environments/environment";
 import {SearchPageComponent} from "./search-page/search-page.component";
+import { DetailPageComponent } from './detail-page/detail-page.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {VarifyEmailComponent} from "./component/varify-email/varify-email.component";
 import {LoginComponent} from "./component/login/login.component";
@@ -22,6 +23,13 @@ import {ForgotPasswordComponent} from "./component/forgot-password/forgot-passwo
 import {DashboardComponent} from "./component/dashboard/dashboard.component";
 import {AngularFireModule} from "@angular/fire/compat";
 // import {NewsapiservicesService} from "./service/newsapiservices.service";
+const routes: Routes = [
+  {path:'home', component:ContentComponent},
+  {path:'', redirectTo:'home',pathMatch:'full' },
+  {path:'about', component:AboutComponent},
+  {path:'contact', component:ContactComponent},
+  {path:'searchPage',component: SearchPageComponent},
+  {path:'news/:newTitle', component:DetailPageComponent},
 
 @NgModule({
   declarations: [
@@ -32,6 +40,7 @@ import {AngularFireModule} from "@angular/fire/compat";
     ContentComponent,
     SearchComponent,
     SearchPageComponent,
+    DetailPageComponent,
     VarifyEmailComponent,
     LoginComponent,
     RegisterComponent,

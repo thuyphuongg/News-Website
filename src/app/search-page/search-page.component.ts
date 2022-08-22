@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {RestService} from "../service/rest.service";
 import {New} from "../Class/new";
+import {DataTranfersService} from "../service/data-tranfers.service";
 
 // import * as console from "console";
 
@@ -13,9 +14,9 @@ export class SearchPageComponent implements OnInit {
     // @Input() news;
     data: New[] = [];
     news: New[] = [];
-    keyWords = '';
+    keyWords: any;
 
-    constructor(public rs: RestService) {
+    constructor(public rs: RestService, private dts: DataTranfersService) {
     }
 
     // ngOnInit() {
@@ -25,11 +26,14 @@ export class SearchPageComponent implements OnInit {
         this.rs.getNews().subscribe((reponse) => {
             this.news = reponse;
         })
+        this.dts.receivedMessage().subscribe((res)=>{
+            this.keyWords = res;
+        })
     }
 
     Search() {
         if (this.keyWords == "") {
-            this.ngOnInit();
+            this.data=[];
         } else {
             this.data = this.news.filter(res =>{
                 return res.chapterTitle.toLocaleLowerCase().match(this.keyWords.toLocaleLowerCase())}
@@ -37,7 +41,6 @@ export class SearchPageComponent implements OnInit {
                     //     res[k].toString().toLowerCase().includes(this.keyWords.toLowerCase()));
                 // res;
             );
-
         }
     }
 

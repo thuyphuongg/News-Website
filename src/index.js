@@ -13,11 +13,12 @@ const dslink = "listLink.txt";
 //lưu danh sách link thành mảng
 var arrayLink = fs.readFileSync(dslink).toString().split("\n");
 let data = [];
+let newId = 1;
 async function crawler() {
+
     await sleep(1000);
     for (i in arrayLink) {
         const linkchay = arrayLink[i];
-
         try {
             const options = {
                 uri: linkchay,
@@ -86,8 +87,8 @@ async function crawler() {
         //     });
         //     const postTitle = contentMain.find("figcaption").text().trim();
 
-
         data.push({
+            newId,
             categoryName,
             dateTime,
             chapterTitle,
@@ -100,6 +101,7 @@ async function crawler() {
         data.concat(data);
         // Lưu dữ liệu về máy
         fs.writeFileSync('Data.json', JSON.stringify(data))
+        newId++;
         console.log(linkchay + "------------->done");
         await sleep(1000);
     }

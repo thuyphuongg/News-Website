@@ -16,16 +16,14 @@
     </div>
     <div class="ad468x60"> <a href="#"><img src="images/ad468x60.gif" alt="" /></a> </div>
     <div class="break"></div>
-    <ol>
-        <li><a href="#">Chính trị</a></li>
-        <li><a href="#">Thời sự</a></li>
-        <li><a href="#">Kinh doanh</a></li>
-        <li><a href="#">Thế giới</a></li>
-        <li><a href="#">Giải trí</a></li>
-        <li><a href="#">Đời sống</a></li>
-        <li><a href="#">Pháp luật</a></li>
-        <li><a href="#">Công nghệ</a></li>
-        <li><a href="#">Du lịch</a></li>
+    <ol *ngFor="let c of categories" style="display: inline-block">
+        <li> <div class="dropdown">
+            <a href="#" >{{c.categoryName}}</a>
+                <div class="dropdown-content"  >
+                    <a style="color: black" *ngFor="let sub of c.categorySubName">{{sub}}</a>
+                </div>
+            </div>
+        </li>
     </ol>
     <div class="break"></div>
 </div>

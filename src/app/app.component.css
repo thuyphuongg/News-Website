@@ -40,7 +40,7 @@ img {
 
 /** BEGIN wrapper **/
 #wrapper {
-    width: 970px;
+    width: 1300px;
     background:  repeat-y 0 0;
     margin: auto auto;
     text-align: left;
@@ -121,13 +121,14 @@ img {
 
 /** BEGIN content **/
 #content {
-    width: 666px;
+    width: 100%;
     float: left;
 }
 #content .post {
     width: 259px; height: 420px;
     float: left;
     padding: 20px 15px 0 35px;
+    overflow: hidden;
 }
 #content .post h2 {
     /*font-family: Georgia;*/

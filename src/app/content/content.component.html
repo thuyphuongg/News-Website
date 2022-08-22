@@ -1,32 +1,28 @@
 <!-- BEGIN content -->
-<div id="content" style="">
 
-  <!-- begin post -->
-  <!--    *ngFor="let post of news"-->
-  <div *ngFor="let post of news | paginate: { itemsPerPage: 6, currentPage: p }" style="display: inline-block">
-    <div class="post" style="height:auto;">
-      <div class="thumb">
-        <a href="#">
-          <img src="{{post.postLink[0]}}" alt="" style="height: 100%"/>
-        </a>
-      </div>
-      <div class="title"><h2 style=" font-family: inherit">
-        <a href="#">{{post.chapterTitle}}</a>
-      </h2></div>
-
-      <div class="sumary">
+<div   id="content" style="width: 100%">
+    <app-slide-bar></app-slide-bar>
+    <!-- begin post -->
+<!--    *ngFor="let post of news"-->
+    <div>
+    <div *ngFor="let post of news | paginate:{itemsPerPage: 6,currentPage: p}" [routerLink]="['news',post.chapterTitle]"  >
+    <div  class="post" style="height: 700px; width: 300px" >
+        <div class="thumb" >
+            <a href="#" >
+                <img src="{{post.postLink[0]}}" alt=""style="height: 100%"/>
+            </a>
+        </div>
+        <h2 style=" font-family: inherit">
+            <a href="#">{{post.chapterTitle}}</a>
+        </h2>
         <p class="date">{{post.dateTime}}</p>
-        <p>{{post.textBold}}</p>
-      </div>
-      <a class="continue" href="">Tiếp tục đọc</a></div>
-  </div>
-  <!-- end post -->
-  <!-- begin post navigation -->
-  <div class="postnav">
-    <pagination-controls (pageChange)="p= $event" class="float-right"></pagination-controls>
-    <div class="break"></div>
-  </div>
-  <!-- end post navigation -->
+        <p style="width: 250px;height: 100px; overflow: hidden">{{post.textBold}}</p>
+        <a class="continue" href="">Tiếp tục đọc</a> </div>
+
+    </div>
+    <pagination-controls (pageChange)="p=$event" class="postnav" ></pagination-controls>
+    <!-- end post -->
+    </div>
 </div>
 <!-- END content -->
-<app-slide-bar></app-slide-bar>
+

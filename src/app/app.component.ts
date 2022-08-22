@@ -18,4 +18,7 @@ export class AppComponent {
             console.log(this.news);
         })
     }
+    // sendData(){
+    //     this.rs.sendData()
+    // }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {New} from "../Class/new";
 import {Router} from "@angular/router";
+import {DataTranfersService} from "../service/data-tranfers.service";
 
 
 @Component({
@@ -10,11 +11,15 @@ import {Router} from "@angular/router";
 })
 
 export class SearchComponent implements OnInit {
-  keyWord='';
-  constructor(private router: Router) {
+  constructor(private router: Router, private dts: DataTranfersService ) {
   }
   ngOnInit(): void {}
   btnClick() {
     this.router.navigateByUrl('/searchPage');
   }
+
+  sendMessage(message: HTMLInputElement){
+    this.dts.sendMessage(message.value);
+  }
+
 }
