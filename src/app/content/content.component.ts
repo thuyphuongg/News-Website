@@ -19,6 +19,7 @@ export class ContentComponent implements OnInit {
 //Phần này để chạy data crawl được
   @Input() news;
   keyWord: any;
+  p: number=1;
   constructor(public rs: RestService) {
   }
   ngOnInit(): void {

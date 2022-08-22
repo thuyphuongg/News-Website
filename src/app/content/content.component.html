@@ -3,7 +3,7 @@
 
     <!-- begin post -->
 <!--    *ngFor="let post of news"-->
-    <div *ngFor="let post of news" style="display: inline-block">
+    <div *ngFor="let post of news | paginate:{itemsPerPage: 10,currentPage: p}" >
     <div  class="post" style="height:auto;">
         <div class="thumb">
             <a href="#" >
@@ -17,17 +17,8 @@
         <p>{{post.textBold}}</p>
         <a class="continue" href="">Continue Reading</a> </div>
     </div>
+    <pagination-controls (pageChange)="p=$event" class="postnav" ></pagination-controls>
     <!-- end post -->
-    <!-- begin post navigation -->
-    <div class="postnav">
-        <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">&raquo;</a></li>
-        </ul>
-        <div class="break"></div>
-    </div>
-    <!-- end post navigation -->
 </div>
 <!-- END content -->
 <app-slide-bar></app-slide-bar>
