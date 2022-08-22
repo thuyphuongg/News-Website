@@ -20,9 +20,9 @@ export class ContentComponent implements OnInit {
 //Phần này để chạy data crawl được
     news: New[] = []
     p: number = 1;
-
     constructor(public rs: RestService) {
     }
+
 
     ngOnInit(): void {
         this.rs.getNews().subscribe((reponse) => {
@@ -30,5 +30,5 @@ export class ContentComponent implements OnInit {
             console.log(this.news);
         })
     }
-
+  }
 }
