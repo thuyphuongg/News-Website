@@ -91,10 +91,11 @@ img {
   list-style-type: none;
   height: 35px;
   background-color: #252525;
+  width:10%;
 }
 #header ol li {
   float: left;
-  width: 11%;
+  /*width: 11%;*/
 }
 #header ol li a {
   color: #ffffff;
